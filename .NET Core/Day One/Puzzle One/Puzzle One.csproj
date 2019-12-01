@@ -3,11 +3,16 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.0</TargetFramework>
-        <RootNamespace>TNRD.AOC.DayOne</RootNamespace>
+        <RootNamespace>TNRD.AdventOfCode.DayOne.PuzzleOne</RootNamespace>
+        <AssemblyName>TNRD.AdventOfCode.DayOne.PuzzleOne</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="RestSharp" Version="106.6.10" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Foundation\Foundation\Foundation.csproj" />
     </ItemGroup>
 
 </Project>

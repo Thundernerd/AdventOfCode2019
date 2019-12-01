@@ -4,22 +4,17 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
-namespace TNRD.AOC.DayOne
+namespace TNRD.AdventOfCode.DayOne.PuzzleOne
 {
-    public class PuzzleSolver
+    public class PuzzleSolver : Foundation.PuzzleSolver
     {
-        protected int Day { get; private set; }
-        protected string Input { get; private set; }
-
         private ConcurrentBag<double> individualFuelCalculations = new ConcurrentBag<double>();
 
-        public PuzzleSolver(int day, string sessionCookie)
+        public PuzzleSolver(int day, string sessionCookie) : base(day, sessionCookie)
         {
-            Day = day;
-            Input = PuzzleInputDownloader.DownloadInput(day, sessionCookie);
         }
 
-        public void Solve()
+        public override void Solve()
         {
             string[] lines = Input.Split("\n", StringSplitOptions.RemoveEmptyEntries);
             Parallel.ForEach(lines, Calculate);
