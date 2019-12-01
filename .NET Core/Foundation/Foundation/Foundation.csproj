@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <AssemblyName>TNRD.AdventOfCode.Foundation</AssemblyName>
+        <RootNamespace>TNRD.AdventOfCode.Foundation</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="RestSharp" Version="106.6.10" />
+    </ItemGroup>
+
+</Project>
