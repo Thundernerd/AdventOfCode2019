@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <RootNamespace>TNRD.AdventOfCode.DayOne.PuzzleTwo</RootNamespace>
+        <AssemblyName>TNRD.AdventOfCode.DayOne.PuzzleTwo</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Foundation\Foundation\Foundation.csproj" />
+    </ItemGroup>
+
+</Project>
