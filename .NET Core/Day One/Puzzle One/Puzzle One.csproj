@@ -3,7 +3,11 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.0</TargetFramework>
-        <RootNamespace>Puzzle_One</RootNamespace>
+        <RootNamespace>TNRD.AOC.DayOne</RootNamespace>
     </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="RestSharp" Version="106.6.10" />
+    </ItemGroup>
 
 </Project>
