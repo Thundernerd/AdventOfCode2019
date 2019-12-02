@@ -12,18 +12,19 @@ namespace TNRD.AdventOfCode.DayTwo.PuzzleOne
 
         public override void Solve()
         {
-            List<int> convertedInput = InputConverter.ConvertToIntegers(Input);
+            List<int> memory = InputConverter.ConvertToIntegers(Input);
 
-            for (int i = 0; i < convertedInput.Count; i += 4)
+            for (int pointer = 0; pointer < memory.Count; pointer += 4)
             {
-                if (convertedInput[i] == 99)
+                if (IntCodeProgramFactory.GetInstruction(pointer, memory) == IntCodeProgramFactory.Instruction.Halt)
                     break;
-                IIntCodeProgram program = IntCodeProgramFactory.Create(i, convertedInput);
+
+                IIntCodeProgram program = IntCodeProgramFactory.Create(pointer, memory);
                 program.Execute();
-                convertedInput = program.GetOutput();
+                memory = program.GetRam();
             }
-            
-            Console.WriteLine($"Puzzle answer for day {Day} is {convertedInput[0]}");
+
+            Console.WriteLine($"Puzzle answer for day {Day} is {memory[0]}");
         }
     }
 }

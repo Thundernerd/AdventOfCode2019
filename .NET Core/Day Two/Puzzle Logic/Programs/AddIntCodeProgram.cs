@@ -4,13 +4,13 @@ namespace TNRD.AdventOfCode.DayTwo.Shared
 {
     public class AddIntCodeProgram : IntCodeProgram
     {
-        internal AddIntCodeProgram(List<int> program, List<int> input) : base(program, input)
+        internal AddIntCodeProgram(List<int> program, List<int> rom) : base(program, rom)
         {
         }
 
         public override void Execute()
         {
-            WriteOutput(GetFirstInput() + GetSecondInput());
+            WriteOutput(GetNoun() + GetVerb());
         }
     }
 }

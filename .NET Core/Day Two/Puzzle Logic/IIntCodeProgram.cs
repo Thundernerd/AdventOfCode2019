@@ -5,6 +5,6 @@ namespace TNRD.AdventOfCode.DayTwo.Shared
     public interface IIntCodeProgram
     {
         void Execute();
-        List<int> GetOutput();
+        List<int> GetRam();
     }
 }

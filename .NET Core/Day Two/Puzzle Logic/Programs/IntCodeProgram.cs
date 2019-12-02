@@ -5,36 +5,36 @@ namespace TNRD.AdventOfCode.DayTwo.Shared
     public abstract class IntCodeProgram : IIntCodeProgram
     {
         private readonly List<int> program;
-        private readonly List<int> input;
-        private readonly List<int> output;
+        private readonly List<int> rom;
+        private readonly List<int> ram;
 
-        protected IntCodeProgram(List<int> program, List<int> input)
+        protected IntCodeProgram(List<int> program, List<int> rom)
         {
             this.program = program;
-            this.input = input;
-            output = new List<int>(input);
+            this.rom = rom;
+            ram = new List<int>(rom);
         }
 
         public abstract void Execute();
 
-        protected int GetFirstInput()
+        protected int GetNoun()
         {
-            return input[program[1]];
+            return rom[program[1]];
         }
 
-        protected int GetSecondInput()
+        protected int GetVerb()
         {
-            return input[program[2]];
+            return rom[program[2]];
         }
 
         protected void WriteOutput(int value)
         {
-            output[program[3]] = value;
+            ram[program[3]] = value;
         }
 
-        public List<int> GetOutput()
+        public List<int> GetRam()
         {
-            return output;
+            return ram;
         }
     }
 }

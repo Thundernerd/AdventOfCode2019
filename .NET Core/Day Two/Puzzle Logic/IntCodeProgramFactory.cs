@@ -4,25 +4,31 @@ namespace TNRD.AdventOfCode.DayTwo.Shared
 {
     public static class IntCodeProgramFactory
     {
-        private enum OpCode
+        public enum Instruction
         {
             Addition = 1,
-            Multiplication = 2
+            Multiplication = 2,
+            Halt = 99
         }
 
-        public static IIntCodeProgram Create(int index, List<int> input)
+        public static IIntCodeProgram Create(int pointer, List<int> memory)
         {
-            List<int> program = input.GetRange(index, 4);
+            List<int> program = memory.GetRange(pointer, 4);
 
-            switch ((OpCode) program[0])
+            switch (GetInstruction(pointer, memory))
             {
-                case OpCode.Addition:
-                    return new AddIntCodeProgram(program, input);
-                case OpCode.Multiplication:
-                    return new MultiplyIntCodeProgram(program, input);
+                case Instruction.Addition:
+                    return new AddIntCodeProgram(program, memory);
+                case Instruction.Multiplication:
+                    return new MultiplyIntCodeProgram(program, memory);
             }
 
             return null;
+        }
+
+        public static Instruction GetInstruction(int pointer, List<int> memory)
+        {
+            return (Instruction) memory[pointer];
         }
     }
 }
