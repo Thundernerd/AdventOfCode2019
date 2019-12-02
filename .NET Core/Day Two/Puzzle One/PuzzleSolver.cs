@@ -12,7 +12,7 @@ namespace TNRD.AdventOfCode.DayTwo.PuzzleOne
 
         public override void Solve()
         {
-            List<int> memory = InputConverter.ConvertToIntegers(Input);
+            List<int> memory = InputConverter.CreateMemory(Input);
 
             for (int pointer = 0; pointer < memory.Count; pointer += 4)
             {

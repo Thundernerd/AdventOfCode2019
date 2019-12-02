@@ -12,22 +12,36 @@ namespace TNRD.AdventOfCode.DayTwo.PuzzleTwo
 
         public override void Solve()
         {
-            List<int> memory = InputConverter.ConvertToIntegers(Input);
-            int result = 0;
+            int noun = 0;
+            int verb = 0;
+            int? result = null;
 
-            for (int pointer = 0; pointer < memory.Count; pointer += 4)
+            while (noun < 100 && verb < 100)
             {
-                if (IntCodeProgramFactory.GetInstruction(pointer, memory) == IntCodeProgramFactory.Instruction.Halt)
-                    break;
+                List<int> memory = InputConverter.CreateMemory(Input, noun, verb);
 
-                IIntCodeProgram program = IntCodeProgramFactory.Create(pointer, memory);
-                program.Execute();
-                List<int> ram = program.GetRam();
-
-                if (ram[pointer] == 19690720)
+                for (int pointer = 0; pointer < memory.Count; pointer += 4)
                 {
-                    result = 100 * program.GetNoun() + program.GetVerb();
+                    if (IntCodeProgramFactory.GetInstruction(pointer, memory) == IntCodeProgramFactory.Instruction.Halt)
+                        break;
+
+                    IIntCodeProgram program = IntCodeProgramFactory.Create(pointer, memory);
+                    program.Execute();
+                    memory = program.GetRam();
+                }
+
+                if (memory[0] == 19690720)
+                {
+                    result = 100 * noun + verb;
                     break;
+                }
+
+                if (noun < 99)
+                    ++noun;
+                else
+                {
+                    noun = 0;
+                    ++verb;
                 }
             }
 
