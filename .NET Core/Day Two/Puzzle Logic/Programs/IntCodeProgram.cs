@@ -17,12 +17,12 @@ namespace TNRD.AdventOfCode.DayTwo.Shared
 
         public abstract void Execute();
 
-        protected int GetNoun()
+        public int GetNoun()
         {
             return rom[program[1]];
         }
 
-        protected int GetVerb()
+        public int GetVerb()
         {
             return rom[program[2]];
         }

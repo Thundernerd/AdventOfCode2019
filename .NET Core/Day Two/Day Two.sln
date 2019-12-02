@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation", "..\Foundation
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puzzle Logic", "Puzzle Logic\Puzzle Logic.csproj", "{56DC90F7-29D3-4C8A-99E3-601597A2913A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puzzle Two", "Puzzle Two\Puzzle Two.csproj", "{61ADBF66-B74B-4295-93CB-F6586F01EBF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{56DC90F7-29D3-4C8A-99E3-601597A2913A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56DC90F7-29D3-4C8A-99E3-601597A2913A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56DC90F7-29D3-4C8A-99E3-601597A2913A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61ADBF66-B74B-4295-93CB-F6586F01EBF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61ADBF66-B74B-4295-93CB-F6586F01EBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61ADBF66-B74B-4295-93CB-F6586F01EBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61ADBF66-B74B-4295-93CB-F6586F01EBF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
