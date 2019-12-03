@@ -7,13 +7,13 @@ namespace TNRD.AdventOfCode.DayTwo.PuzzleOne
     {
         public override int Day => 2;
 
-        public PuzzleSolver(string sessionCookie) : base(sessionCookie)
+        public PuzzleSolver()
         {
         }
 
-        public override object Solve()
+        public override object Solve(string input)
         {
-            List<int> memory = InputConverter.CreateMemory(Input);
+            List<int> memory = InputConverter.CreateMemory(input);
 
             for (int pointer = 0; pointer < memory.Count; pointer += 4)
             {

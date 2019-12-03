@@ -12,13 +12,13 @@ namespace TNRD.AdventOfCode.DayOne.PuzzleOne
 
         public override int Day => 1;
 
-        public PuzzleSolver(string sessionCookie) : base(sessionCookie)
+        public PuzzleSolver()
         {
         }
 
-        public override object Solve()
+        public override object Solve(string input)
         {
-            string[] lines = Input.Split("\n", StringSplitOptions.RemoveEmptyEntries);
+            string[] lines = input.Split("\n", StringSplitOptions.RemoveEmptyEntries);
             Parallel.ForEach(lines, Calculate);
             return individualFuelCalculations.AsParallel().Sum();
         }
