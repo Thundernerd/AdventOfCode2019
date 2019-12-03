@@ -1,12 +1,12 @@
-﻿using System;
+﻿using TNRD.AdventOfCode.Foundation;
 
 namespace TNRD.AdventOfCode.DayTwo.PuzzleTwo
 {
-    class Program
+    class Program : BaseProgram
     {
         static void Main(string[] args)
         {
-            Foundation.PuzzleSolver.Solve(2);
+            CreateAndSolve();
         }
     }
 }

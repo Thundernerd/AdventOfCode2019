@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using TNRD.AdventOfCode.DayTwo.Shared;
 
@@ -6,11 +5,13 @@ namespace TNRD.AdventOfCode.DayTwo.PuzzleTwo
 {
     public class PuzzleSolver : Foundation.PuzzleSolver
     {
-        public PuzzleSolver(int day, string sessionCookie) : base(day, sessionCookie)
+        public override int Day => 2;
+
+        public PuzzleSolver(string sessionCookie) : base(sessionCookie)
         {
         }
 
-        public override void Solve()
+        public override object Solve()
         {
             int noun = 0;
             int verb = 0;
@@ -45,7 +46,7 @@ namespace TNRD.AdventOfCode.DayTwo.PuzzleTwo
                 }
             }
 
-            Console.WriteLine($"Puzzle answer for day {Day} is {result}");
+            return result;
         }
     }
 }

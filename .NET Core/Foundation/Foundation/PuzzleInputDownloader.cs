@@ -6,7 +6,7 @@ namespace TNRD.AdventOfCode.Foundation
 {
     public class PuzzleInputDownloader
     {
-        private const string INPUT_URL = "https://adventofcode.com/2019/day/{0}/input";
+        private const string INPUT_URL = "https://adventofcode.com/2015/day/{0}/input";
 
         public static string DownloadInput(int day, string sessionCookie)
         {

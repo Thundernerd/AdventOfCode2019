@@ -10,16 +10,17 @@ namespace TNRD.AdventOfCode.DayOne.PuzzleTwo
     {
         private ConcurrentBag<double> individualFuelCalculations = new ConcurrentBag<double>();
 
-        public PuzzleSolver(int day, string sessionCookie) : base(day, sessionCookie)
+        public override int Day => 1;
+
+        public PuzzleSolver(string sessionCookie) : base(sessionCookie)
         {
         }
 
-        public override void Solve()
+        public override object Solve()
         {
             string[] lines = Input.Split("\n", StringSplitOptions.RemoveEmptyEntries);
             Parallel.ForEach(lines, Calculate);
-            double totalRequiredFuel = individualFuelCalculations.AsParallel().Sum();
-            Console.WriteLine($"Puzzle answer for day {Day} is {totalRequiredFuel}");
+            return individualFuelCalculations.AsParallel().Sum();
         }
 
         private void Calculate(string line)
