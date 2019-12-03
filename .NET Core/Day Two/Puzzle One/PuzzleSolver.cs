@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using TNRD.AdventOfCode.DayTwo.Shared;
 
@@ -6,11 +5,13 @@ namespace TNRD.AdventOfCode.DayTwo.PuzzleOne
 {
     public class PuzzleSolver : Foundation.PuzzleSolver
     {
-        public PuzzleSolver(int day, string sessionCookie) : base(day, sessionCookie)
+        public override int Day => 2;
+
+        public PuzzleSolver(string sessionCookie) : base(sessionCookie)
         {
         }
 
-        public override void Solve()
+        public override object Solve()
         {
             List<int> memory = InputConverter.CreateMemory(Input);
 
@@ -24,7 +25,7 @@ namespace TNRD.AdventOfCode.DayTwo.PuzzleOne
                 memory = program.GetRam();
             }
 
-            Console.WriteLine($"Puzzle answer for day {Day} is {memory[0]}");
+            return memory[0];
         }
     }
 }
