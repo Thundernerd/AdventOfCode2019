@@ -7,11 +7,11 @@ namespace TNRD.AdventOfCode.DayTwo.PuzzleTwo
     {
         public override int Day => 2;
 
-        public PuzzleSolver(string sessionCookie) : base(sessionCookie)
+        public PuzzleSolver()
         {
         }
 
-        public override object Solve()
+        public override object Solve(string input)
         {
             int noun = 0;
             int verb = 0;
@@ -19,7 +19,7 @@ namespace TNRD.AdventOfCode.DayTwo.PuzzleTwo
 
             while (noun < 100 && verb < 100)
             {
-                List<int> memory = InputConverter.CreateMemory(Input, noun, verb);
+                List<int> memory = InputConverter.CreateMemory(input, noun, verb);
 
                 for (int pointer = 0; pointer < memory.Count; pointer += 4)
                 {

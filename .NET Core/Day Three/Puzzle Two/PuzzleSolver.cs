@@ -9,13 +9,13 @@ namespace TNRD.AdventOfCode.DayThree.PuzzleTwo
     {
         public override int Day => 3;
 
-        public PuzzleSolver(string sessionCookie) : base(sessionCookie)
+        public PuzzleSolver()
         {
         }
 
-        public override object Solve()
+        public override object Solve(string input)
         {
-            string[] splits = Input.Split("\n", StringSplitOptions.RemoveEmptyEntries);
+            string[] splits = input.Split("\n", StringSplitOptions.RemoveEmptyEntries);
             Walker first = new Walker(splits[0]);
             Walker second = new Walker(splits[1]);
 
