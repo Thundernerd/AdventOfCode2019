@@ -1,16 +1,21 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TNRD.AdventOfCode.DayThree.Shared
 {
     public class Map
     {
-        private List<(int, int)> positions = new List<(int, int)>();
+        private readonly Dictionary<(int, int), int> positionToLength = new Dictionary<(int, int), int>();
 
-        public List<(int, int)> Positions => positions;
+        private int length;
+
+        public List<(int, int)> Positions => positionToLength.Keys.ToList();
+
+        public Dictionary<(int, int), int> PositionToLength => positionToLength;
 
         public void Add(int x, int y)
         {
-            positions.Add((x, y));
+            positionToLength.TryAdd((x, y), ++length);
         }
     }
 }
