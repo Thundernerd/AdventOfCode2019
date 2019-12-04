@@ -1,3 +1,6 @@
+using System;
+using TNRD.AdventOfCode.DayFour.Shared;
+
 namespace TNRD.AdventOfCode.DayFour.PuzzleTwo
 {
     public class PuzzleSolver : Foundation.PuzzleSolver
@@ -6,7 +9,22 @@ namespace TNRD.AdventOfCode.DayFour.PuzzleTwo
 
         public override object Solve(string input)
         {
-            throw new System.NotImplementedException();
+            string[] splits = input.Trim().Split('-', StringSplitOptions.RemoveEmptyEntries);
+            int min = int.Parse(splits[0]);
+            int max = int.Parse(splits[1]);
+            PasswordValidator validator = new PasswordValidator(
+                new IncreasingDigitRule(),
+                new MaxDuplicateAdjacentDigitsRule(2));
+
+            int countValid = 0;
+
+            for (int i = min; i < max; i++)
+            {
+                if (validator.Validate(i))
+                    ++countValid;
+            }
+
+            return countValid;
         }
     }
 }
