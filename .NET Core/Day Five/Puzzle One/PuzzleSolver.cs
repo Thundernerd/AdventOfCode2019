@@ -1,3 +1,5 @@
+using TNRD.AdventOfCode.DayFive.Shared;
+
 namespace TNRD.AdventOfCode.DayFive.PuzzleOne
 {
     public class PuzzleSolver : Foundation.PuzzleSolver
@@ -6,7 +8,9 @@ namespace TNRD.AdventOfCode.DayFive.PuzzleOne
 
         public override object Solve(string input)
         {
-            throw new System.NotImplementedException();
+            var emulator = new Emulator();
+            emulator.Run(input);
+            return "see previous output";
         }
     }
 }
