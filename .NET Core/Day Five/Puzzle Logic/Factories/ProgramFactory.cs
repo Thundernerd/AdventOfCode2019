@@ -34,10 +34,11 @@ namespace TNRD.AdventOfCode.DayFive.Shared
 
         public static IProgram CreateProgram(Emulator emulator, int value)
         {
+            int index = value;
             if (value.ToString().Length != 1)
-                value = Utilities.GetDigitFromInteger(value, 2) * 10 + Utilities.GetDigitFromInteger(value, 1);
+                index = Utilities.GetDigitFromInteger(value, 2) * 10 + Utilities.GetDigitFromInteger(value, 1);
             
-            return (IProgram) Activator.CreateInstance(opCodeToProgramType[value], emulator);
+            return (IProgram) Activator.CreateInstance(opCodeToProgramType[index], emulator);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace TNRD.AdventOfCode.DayFive.Shared
     public class Emulator
     {
         public int[] Memory { get; private set; }
-        public int Pointer = 0;
+        private int pointer = 0;
 
         public Emulator()
         {
@@ -16,9 +16,9 @@ namespace TNRD.AdventOfCode.DayFive.Shared
         {
             Memory = ConvertInputToMemory(input);
 
-            for (; Pointer < Memory.Length;)
+            for (; pointer < Memory.Length;)
             {
-                int value = Memory[Pointer];
+                int value = Memory[pointer];
 
                 try
                 {
@@ -27,18 +27,21 @@ namespace TNRD.AdventOfCode.DayFive.Shared
 
                     for (int i = 1; i <= program.RequiredParameterCount; i++)
                     {
-                        int parameterValue = Memory[Pointer + i];
+                        int parameterValue = Memory[pointer + i];
                         IParameter parameter = ParameterFactory.CreateParameter(this, value, i, parameterValue);
                         parameters[i - 1] = parameter;
                     }
 
                     program.Run(parameters);
 
-                    Pointer += program.RequiredParameterCount + 1;
+                    pointer += program.RequiredParameterCount + 1;
                 }
                 catch (HaltException)
                 {
                     break;
+                }
+                catch (ForceToNextInstructionException)
+                {
                 }
             }
         }
@@ -69,6 +72,16 @@ namespace TNRD.AdventOfCode.DayFive.Shared
         public void WriteToLog(int value)
         {
             Console.WriteLine(value);
+        }
+
+        public void JumpAhead(int amount)
+        {
+            pointer += amount;
+        }
+
+        public void JumpTo(int value)
+        {
+            pointer = value;
         }
     }
 }
