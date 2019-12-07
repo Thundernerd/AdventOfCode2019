@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <RootNamespace>TNRD.AdventOfCode.DaySeven.Shared</RootNamespace>
+        <AssemblyName>TNRD.AdventOfCode.DaySeven.Shared</AssemblyName>
+    </PropertyGroup>
+
+</Project>

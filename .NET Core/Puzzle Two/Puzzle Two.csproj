@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <RootNamespace>TNRD.AdventOfCode.DaySeven.PuzzleTwo</RootNamespace>
+        <AssemblyName>TNRD.AdventOfCode.DaySeven.PuzzleTwo</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Emulator\Emulator.csproj" />
+      <ProjectReference Include="..\Foundation\Foundation\Foundation.csproj" />
+      <ProjectReference Include="..\Puzzle Logic\Puzzle Logic.csproj" />
+    </ItemGroup>
+
+</Project>
