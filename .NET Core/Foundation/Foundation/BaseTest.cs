@@ -9,7 +9,7 @@ namespace TNRD.AdventOfCode.Foundation
         {
             IPuzzleSolver puzzleSolver = PuzzleSolverFactory.Create();
             object answer = puzzleSolver.Solve(input);
-            Assert.AreEqual(answer, expectedAnswer);
+            Assert.AreEqual(expectedAnswer, answer);
         }
     }
 }
