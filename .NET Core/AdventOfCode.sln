@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puzzle One", "Day Six\Puzzl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puzzle Two", "Day Six\Puzzle Two\Puzzle Two.csproj", "{73B2654C-E4C2-4A15-A9FF-569817C3FC71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emulator", "Emulator\Emulator.csproj", "{91AC0FE6-D7DF-406D-B944-B834EE98FFAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,5 +147,9 @@ Global
 		{73B2654C-E4C2-4A15-A9FF-569817C3FC71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73B2654C-E4C2-4A15-A9FF-569817C3FC71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73B2654C-E4C2-4A15-A9FF-569817C3FC71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91AC0FE6-D7DF-406D-B944-B834EE98FFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AC0FE6-D7DF-406D-B944-B834EE98FFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AC0FE6-D7DF-406D-B944-B834EE98FFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91AC0FE6-D7DF-406D-B944-B834EE98FFAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
