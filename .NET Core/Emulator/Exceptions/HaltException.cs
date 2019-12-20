@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace TNRD.AdventOfCode.Emulator
+namespace TNRD.AdventOfCode.Emulation
 {
     [Serializable]
     public class HaltException : Exception

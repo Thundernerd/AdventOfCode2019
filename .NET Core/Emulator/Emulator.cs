@@ -1,6 +1,7 @@
+using System;
 using System.Linq;
 
-namespace TNRD.AdventOfCode.Emulator
+namespace TNRD.AdventOfCode.Emulation
 {
     public class Emulator
     {

@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Emulator\Emulator.csproj" />
-      <ProjectReference Include="..\Foundation\Foundation\Foundation.csproj" />
+      <ProjectReference Include="..\..\Emulator\Emulator.csproj" />
+      <ProjectReference Include="..\..\Foundation\Foundation\Foundation.csproj" />
       <ProjectReference Include="..\Puzzle Logic\Puzzle Logic.csproj" />
     </ItemGroup>
 

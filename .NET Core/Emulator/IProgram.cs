@@ -1,4 +1,4 @@
-namespace TNRD.AdventOfCode.Emulator
+namespace TNRD.AdventOfCode.Emulation
 {
     public interface IProgram
     {

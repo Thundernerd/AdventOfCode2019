@@ -1,4 +1,4 @@
-namespace TNRD.AdventOfCode.Emulator.Programs
+namespace TNRD.AdventOfCode.Emulation.Programs
 {
     public class HaltProgram : Program
     {

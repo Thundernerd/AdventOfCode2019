@@ -1,6 +1,6 @@
 using System;
 
-namespace TNRD.AdventOfCode.Emulator
+namespace TNRD.AdventOfCode.Emulation
 {
     public class Utilities
     {

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace TNRD.AdventOfCode.Emulator
+namespace TNRD.AdventOfCode.Emulation
 {
     public static class ParameterFactory
     {

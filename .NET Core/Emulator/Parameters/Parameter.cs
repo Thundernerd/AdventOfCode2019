@@ -1,4 +1,4 @@
-namespace TNRD.AdventOfCode.Emulator.Parameters
+namespace TNRD.AdventOfCode.Emulation.Parameters
 {
     public abstract class Parameter : IParameter
     {

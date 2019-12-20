@@ -6,4 +6,8 @@
         <AssemblyName>TNRD.AdventOfCode.DaySeven.Shared</AssemblyName>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Emulator\Emulator.csproj" />
+    </ItemGroup>
+
 </Project>
