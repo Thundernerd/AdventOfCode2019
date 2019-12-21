@@ -1,28 +1,29 @@
+using System.Collections.Generic;
 using TNRD.AdventOfCode.Emulation;
 
 namespace TNRD.AdventOfCode.DaySeven.Shared
 {
     public class Amplifier
     {
-        private readonly int phaseSetting;
-        private readonly int input;
+        public Emulator Emulator { get; private set; }
 
-        private Emulator emulator;
+        public Queue<int> Output => Emulator.Output;
 
-        public int Output { get; private set; }
+        public Status Status => Emulator.Status;
+
+        public Amplifier(int phaseSetting)
+        {
+            Emulator = new Emulator(phaseSetting);
+        }
 
         public Amplifier(int phaseSetting, int input)
         {
-            this.phaseSetting = phaseSetting;
-            this.input = input;
-
-            emulator = new Emulator(phaseSetting, input);
+            Emulator = new Emulator(phaseSetting, input);
         }
 
         public void Run(string program)
         {
-            emulator.Run(program);
-            Output = emulator.Output;
+            Emulator.Run(program);
         }
     }
 }

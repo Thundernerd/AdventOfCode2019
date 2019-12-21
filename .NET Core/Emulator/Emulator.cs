@@ -1,30 +1,40 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace TNRD.AdventOfCode.Emulation
 {
     public class Emulator
     {
-        public delegate void OnOutputChangedDelegate(int previous, int current);
+        public delegate void OnOutputAddedDelegate(int value);
 
-        public event OnOutputChangedDelegate OnOutputChangedEvent;
+        public delegate void OnInputRequiredDelegate();
+
+        public event OnOutputAddedDelegate OnOutputAddedEvent;
+
+        public event OnInputRequiredDelegate OnInputRequiredEvent;
 
         public int[] Memory { get; private set; }
         private int pointer = 0;
 
-        private int[] inputs;
-        private int currentInputIndex = 0;
+        private Queue<int> inputs;
 
-        public int Output { get; private set; }
+        public Queue<int> Output { get; private set; } = new Queue<int>();
+
+        public Status Status { get; set; }
 
         public Emulator(params int[] inputs)
         {
-            this.inputs = inputs;
+            this.inputs = new Queue<int>(inputs);
         }
 
         public void Run(string input)
         {
-            Memory = ConvertInputToMemory(input);
+            Status = Status.Executing;
+
+            Output.Clear();
+            if (!string.IsNullOrEmpty(input))
+                Memory = ConvertInputToMemory(input);
 
             for (; pointer < Memory.Length;)
             {
@@ -48,10 +58,17 @@ namespace TNRD.AdventOfCode.Emulation
                 }
                 catch (HaltException)
                 {
+                    Status = Status.Completed;
                     break;
                 }
                 catch (ForceToNextInstructionException)
                 {
+                }
+                catch (RequiresInputException)
+                {
+                    Status = Status.WaitingForInput;
+                    OnInputRequiredEvent?.Invoke();
+                    break;
                 }
             }
         }
@@ -74,16 +91,23 @@ namespace TNRD.AdventOfCode.Emulation
 
         public int GetInput()
         {
-            int input = inputs[currentInputIndex];
-            ++currentInputIndex;
-            return input;
+            if (!HasInput())
+            {
+                throw new RequiresInputException();
+            }
+
+            return inputs.Dequeue();
+        }
+
+        public bool HasInput()
+        {
+            return inputs.Count > 0;
         }
 
         public void WriteToOutput(int value)
         {
-            int previous = Output;
-            Output = value;
-            OnOutputChangedEvent?.Invoke(previous, Output);
+            Output.Enqueue(value);
+            OnOutputAddedEvent?.Invoke(value);
         }
 
         public void JumpAhead(int amount)
@@ -94,6 +118,11 @@ namespace TNRD.AdventOfCode.Emulation
         public void JumpTo(int value)
         {
             pointer = value;
+        }
+
+        public void AddInput(int input)
+        {
+            inputs.Enqueue(input);
         }
     }
 }
